@@ -2,6 +2,7 @@ import  styled from "styled-components";
 import { motion, useCycle, AnimatePresence } from "framer-motion"
 const SearchBox = () =>{
    const [visible, setVisible]= useCycle(false, true)
+   const [hidden, setHidden] = useCycle(false, true)
   const listVariant = {
     closed:{
         x: -1000
@@ -10,8 +11,9 @@ const SearchBox = () =>{
         x: 0,
        
         transition: {
+            duration:1,
             staggerChildren: 0.2,
-            delayChildren: 0.3
+            delayChildren: 1
         }
     }
   }
@@ -56,6 +58,25 @@ const SearchBox = () =>{
     },
   ]
 
+
+  const filterVariant ={
+     hidden:{
+       y: 1000,
+      
+     },
+     visible:{
+      y:0,
+
+      transition:{
+        duration: 1,
+        staggerChildren: 0.2,
+        delayChildren: 0.3
+      }
+        
+     }
+  }
+
+
     return (
         <SearchContainer>
           <Category>
@@ -85,14 +106,33 @@ const SearchBox = () =>{
           </Search>
 
              <Filter>
-                <img src="filter.png" alt="fliter" />
-                <motion.FilterBox style={{ position:'absolute', right:'0', top:'2rem' ,display:'flex', flexDirection:'column',justifyContent:'center', backgroundColor:'#35356b', padding:'1rem', width:'10rem'}}>
+                <img src="filter.png" alt="fliter" onClick={setHidden} />
+
+                <AnimatePresence>
+
+                { hidden &&
+
+                <motion.FilterBox initial="hidden" animate="visible" variants={filterVariant} style={{ position:'absolute', right:'0', top:'2.3rem' ,display:'flex', flexDirection:'column',justifyContent:'center', backgroundColor:'#35356b', padding:'1rem', width:'10rem',  border:" 1px solid #6365bf", borderRadius:'12px'}}>
                        <h4 style={{color:'#fff'}}>Filter</h4>
-                       <motion.Box style={{display:'flex', justifyContent:'center'}}>
-                             <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}> <input type='checkbox'/>  <p style={{color:'#fff'}}>All News</p></div>
-      
+                       <motion.Box style={{display:'flex', justifyContent:'space-between'}}>
+                             <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}> <input type='checkbox' style={{focus:'ring-0',background:'#35356b', border:'1px solid #df78e3', color:'#df78e3'}}/>  <p style={{color:'#fff', marginLeft:'5px'}}>All News</p></div>
+                              <p style={{color: "#fff"}}>1028</p>
+                       </motion.Box>
+                       <motion.Box style={{display:'flex', justifyContent:'space-between'}}>
+                             <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}> <input type='checkbox' style={{focus:'ring-0',background:'#35356b', border:'1px solid #df78e3', color:'#df78e3'}}/>  <p style={{color:'#fff', marginLeft:'5px'}}>By Popularity</p></div>
+                             <p style={{color: "#fff"}}>765</p>
+                       </motion.Box>
+                       <motion.Box style={{display:'flex', justifyContent:'space-between'}}>
+                             <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}> <input type='checkbox' style={{focus:'ring-0',background:'#35356b', border:'1px solid #df78e3', color:'#df78e3'}}/>  <p style={{color:'#fff', marginLeft:'5px'}}>By Date</p></div>
+                             <p style={{color: "#fff"}} >180</p>
+                       </motion.Box>
+                       <motion.Box style={{display:'flex', justifyContent:'space-between'}}>
+                             <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}> <input type='checkbox' style={{focus:'ring-0',background:'#35356b', border:'1px solid #df78e3', color:'#df78e3'}}/>  <p style={{color:'#fff', marginLeft:'5px'}}>By Relevance</p></div>
+                             <p style={{color: "#fff"}}>28</p>
                        </motion.Box>
                 </motion.FilterBox>
+                }
+                </AnimatePresence>
              </Filter>
             
           </Container>

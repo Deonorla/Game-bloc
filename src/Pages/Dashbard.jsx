@@ -1,3 +1,4 @@
+import CardView from "../Components/CardView";
 import Header from "../Components/Header";
 import HomeSlider from "../Components/HomeSlider";
 import SearchBox from "../Components/SearchBox";
@@ -7,6 +8,7 @@ const Dashboard = () =>{
            <Header/>
            <HomeSlider/>
            <SearchBox/>
+           <CardView/>
       </div>
     )
 }
