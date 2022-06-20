@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { GiRoundStar } from "react-icons/gi";
 import { RiSendPlaneFill } from "react-icons/ri";
 import { HiChat } from "react-icons/hi";
+import Data from "../Features/Data"
 
 const CardView = () =>{
     return(
@@ -13,63 +14,48 @@ const CardView = () =>{
 
              <CardLayout>
 
-                <Card>
-                    <Img>
-                       <img src="pads.jpg" alt="elden" />
-                    </Img>
-                    <Description>
-                        <Title>
-                           <img src="playstation.png" alt=""/>
-                           <p>Six upcoming games to watch out for</p>
-                        </Title>
-                        <Bar></Bar>
-                       <Summary>
-                           <p>Sueha yodashi talks about six games coming to playstation which you shouldnt miss.</p>
-                       </Summary>
+                 {
+                   Data.data.map(list => {
+                     return(
+                        <Card key={list.id}>
+                           <Img>
+                              <img src={list.img}alt="elden" />
+                           </Img>
+                           <Description>
+                                 <Title>
+                                    <img src={list.logo} alt=""/>
+                                    <p>{list.title}</p>
+                                 </Title>
+                                 <Bar></Bar>
+                              <Summary>
+                                    <p>{list.Description}</p>
+                              </Summary>
 
-                    </Description>
+                           </Description>
 
-                    <Interactions>
+                           <Interactions>
+                              <Trend>{list.trend}</Trend>
+                              <Container>
+                                 <div>
+                                 <Star/>
+                                    <p>364</p>
+                                 </div>
+                                 <div>
+                                 < Send  />
+                                 <p>6</p>
+                                 </div>
+                                    <div>
+                                    <Message />
+                                    <p>36</p>
+                                    </div>
+                              </Container>
+                           </Interactions>
 
-                    </Interactions>
+                        </Card>
+                     )
+                   })
+                 }
 
-                </Card>
-
-                <Card>
-                    <Img>
-                       <img src="elden-ring2.jpg" alt="elden" />
-                    </Img>
-                    <Description>
-                        <Title>
-                           <img src="playstation.png" alt=""/>
-                           <p>Six upcoming games to watch out for</p>
-                        </Title>
-                        <Bar></Bar>
-                       <Summary>
-                           <p>Sueha yodashi talks about six games coming to playstation which you shouldnt miss.</p>
-                       </Summary>
-
-                    </Description>
-
-                    <Interactions>
-                       <Trend><span>New</span></Trend>
-                       <Container>
-                        <div>
-                          <Star/>
-                           <p>364</p>
-                        </div>
-                        <div>
-                          < Send  />
-                          <p>6</p>
-                        </div>
-                           <div>
-                           <Message />
-                           <p>36</p>
-                           </div>
-                       </Container>
-                    </Interactions>
-
-                </Card>
 
              </CardLayout>
 
@@ -110,7 +96,12 @@ const Card = styled.div`
  flex-direction: column;
  background-color: #35356b;
  border-radius: 12px;
+
  padding: 1.2rem .7rem 10px .5rem;
+
+ @media (max-width: 500px){
+   padding: 1.2rem .7rem 1.2rem .5rem;
+ }
 
 `;
 
@@ -150,7 +141,7 @@ const Title = styled.div`
   }
 
   p{
-   margin: 0 0 0 2px; 
+   margin: 0 0 0 5px; 
    color: #fff;
   }
 `;
@@ -163,33 +154,54 @@ const Summary =  styled.div`
 `;
 
 const Interactions = styled.div`
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   margin-top: 8px;
+  width: 100%; 
 `;
 
-const Trend = styled.div`
+const Trend = styled.p`
    display: flex;
    align-items: center;
    justify-content: center;
    background-color: #e23719;
    border-radius: 9999px;
-   padding: 3px 8px 5px 8px;
-   span{
-     color: #fff;
+   padding: 3px 16px 5px 16px;
+   color: #fff;
+
+   @media (max-width: 500px){
+     display: none;
    }
+    
 `;
 
 const Container =styled.div`
- display: flex;
- flex-direction: row;
- div{
    display: flex;
-   p{
-      color:#6365bf;
+   flex-direction: row;
+   
+div{
+    position: relative;
+     display: flex;
+     margin: 5px 16px;
+     p{
+        position: absolute;
+        left: 16px;
+        top: -3px;
+        color:#6365bf;
+     }
    }
- }
+
+   
+   @media (min-width: 500px){
+    div{
+      margin: 0 10px;
+    }
+   }
+
+
 `;
 
 const Star = styled(GiRoundStar)`

@@ -1,5 +1,7 @@
 import  styled from "styled-components";
 import { motion, useCycle, AnimatePresence } from "framer-motion"
+
+
 const SearchBox = () =>{
    const [visible, setVisible]= useCycle(false, true)
    const [hidden, setHidden] = useCycle(false, true)
