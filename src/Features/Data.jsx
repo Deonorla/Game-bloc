@@ -15,7 +15,7 @@
         id: 2,
         img:'elden-ring2.jpg',
         logo:'gamelogo.jpg',
-        title:'Elden ring gets over Popular',
+        title:'Elden ring gets Popular among gamers',
         Description:'A game by timid tencent has ...',
         trend:'Popular'
     },

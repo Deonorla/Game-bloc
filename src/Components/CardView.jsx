@@ -100,7 +100,7 @@ const Card = styled.div`
  padding: 1.2rem .7rem 10px .5rem;
 
  @media (max-width: 500px){
-   padding: 1.2rem .7rem 1.2rem .5rem;
+   padding: 1.2rem .7rem 1rem .5rem;
  }
 
 `;
