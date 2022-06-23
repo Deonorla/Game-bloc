@@ -5,7 +5,7 @@
    data:[
     {
     id: 1,
-    img:'pads.jpg',
+    img:'videogamer.jpg',
     logo:'playstation.png',
     title:'Six upcoming games to watch out for',
     Description:'Sueha yodashi talks about six games ...',

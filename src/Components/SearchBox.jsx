@@ -114,25 +114,25 @@ const SearchBox = () =>{
 
                 { hidden &&
 
-                <motion.FilterBox initial="hidden" animate="visible" variants={filterVariant} style={{ position:'absolute', right:'0', top:'2.3rem' ,display:'flex', flexDirection:'column',justifyContent:'center', backgroundColor:'#35356b', padding:'1rem', width:'10rem',  border:" 1px solid #6365bf", borderRadius:'12px'}}>
+                <motion.filterbox initial="hidden" animate="visible" variants={filterVariant} style={{ position:'absolute', right:'0', top:'2.3rem' ,display:'flex', flexDirection:'column',justifyContent:'center', backgroundColor:'#35356b', padding:'1rem', width:'10rem',  border:" 1px solid #6365bf", borderRadius:'12px'}}>
                        <h4 style={{color:'#fff'}}>Filter</h4>
-                       <motion.Box style={{display:'flex', justifyContent:'space-between'}}>
+                       <motion.box style={{display:'flex', justifyContent:'space-between'}}>
                              <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}> <input type='checkbox' style={{focus:'ring-0',background:'#35356b', border:'1px solid #df78e3', color:'#df78e3'}}/>  <p style={{color:'#fff', marginLeft:'5px'}}>All News</p></div>
                               <p style={{color: "#fff"}}>1028</p>
-                       </motion.Box>
-                       <motion.Box style={{display:'flex', justifyContent:'space-between'}}>
+                       </motion.box>
+                       <motion.box style={{display:'flex', justifyContent:'space-between'}}>
                              <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}> <input type='checkbox' style={{focus:'ring-0',background:'#35356b', border:'1px solid #df78e3', color:'#df78e3'}}/>  <p style={{color:'#fff', marginLeft:'5px'}}>By Popularity</p></div>
                              <p style={{color: "#fff"}}>765</p>
-                       </motion.Box>
-                       <motion.Box style={{display:'flex', justifyContent:'space-between'}}>
+                       </motion.box>
+                       <motion.box style={{display:'flex', justifyContent:'space-between'}}>
                              <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}> <input type='checkbox' style={{focus:'ring-0',background:'#35356b', border:'1px solid #df78e3', color:'#df78e3'}}/>  <p style={{color:'#fff', marginLeft:'5px'}}>By Date</p></div>
                              <p style={{color: "#fff"}} >180</p>
-                       </motion.Box>
-                       <motion.Box style={{display:'flex', justifyContent:'space-between'}}>
+                       </motion.box>
+                       <motion.box style={{display:'flex', justifyContent:'space-between'}}>
                              <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}> <input type='checkbox' style={{focus:'ring-0',background:'#35356b', border:'1px solid #df78e3', color:'#df78e3'}}/>  <p style={{color:'#fff', marginLeft:'5px'}}>By Relevance</p></div>
                              <p style={{color: "#fff"}}>28</p>
-                       </motion.Box>
-                </motion.FilterBox>
+                       </motion.box>
+                </motion.filterbox>
                 }
                 </AnimatePresence>
              </Filter>

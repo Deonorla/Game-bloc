@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 import { GiRoundStar } from "react-icons/gi";
 import { RiSendPlaneFill } from "react-icons/ri";
 import { HiChat } from "react-icons/hi";
@@ -8,17 +9,22 @@ const CardView = () =>{
     return(
         <CardContainer>
              <Heading>
+               
                   <h4> All News </h4> 
                   <span>(73 new posts)</span>
              </Heading>
 
+            
              <CardLayout>
 
                  {
                    Data.data.map(list => {
                      return(
-                        <Card key={list.id}>
+                         
+                     <NavLink to={'/details' + list.id } key={list.id}>
+                           <Card key={list.id}>
                            <Img>
+                          
                               <img src={list.img}alt="elden" />
                            </Img>
                            <Description>
@@ -51,7 +57,9 @@ const CardView = () =>{
                               </Container>
                            </Interactions>
 
-                        </Card>
+                        </Card>            
+                     </NavLink>
+                        
                      )
                    })
                  }
@@ -110,6 +118,7 @@ img{
     width: 100%;
     height: 150px;
     border-radius: 12px;
+    cursor: pointer;
 }
 `;
 
