@@ -4,6 +4,7 @@
  import "slick-carousel/slick/slick.css";
  import "slick-carousel/slick/slick-theme.css";
 
+
  const HomeSlider = ()=>{
 
    const imgData = [
@@ -17,17 +18,17 @@
 
       {  
          id:'2',
-         img:'spiderman.jpg',
-         title:'Pre-order Elden Ring Now',
-         description:'The game will be released on July 5th 2022 and will be available on Ps5, X-box and PC '
+         img:'https://images5.alphacoders.com/314/thumbbig-314472.webp',
+         title:'Get premium access to Call of Duty V',
+         description:' Available on Ps5, X-box and PC, Order yours now!'
 
       },
 
       {  
          id:'3',
          img:'mortal.jpg',
-         title:'Pre-order Elden Ring Now',
-         description:'The game will be released on July 5th 2022 and will be available on Ps5, X-box and PC '
+         title:'Mortal Kombat 11 finally Here',
+         description:'The game will be released on July 25th 2022 and will be available only on Ps5 and X-box. '
 
       }
    ]
@@ -47,7 +48,9 @@
       <Title>
             Discover
       </Title>
-     
+   
+
+  
       <Carousel {...settings}>
      
      { imgData.map((data, index)=>{
@@ -75,26 +78,42 @@
 
 
 </Carousel>
-
-      
-    
+     
+     
      </SliderContainer>
     )
  }
+
+
+
 
 const Title = styled.h1`
    color: #df78e3;
 `;
 
 
+
  const Carousel = styled(Slider)`
-    
- .slick-slider img{
-   width:100%;
-   height: auto;
-   object-fit: cover;
+ transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+ box-shadow: rgb(0 0 0 / 69%) 0px 26px 36px -10px,
+ rgb(0 0 0 / 73%) 0px 16px 10px -10px; 
+ border-radius: 20px;
+ max-height: 220px;
+ width: 100%;
+
+ @media (min-width: 768px ){
+   max-height: 250px;
+   width: 100%;
+   margin-left: 1rem;
+
  }
-    &> button{
+
+ .slick-slider img{
+   max-height: 320px;
+   border-radius: 20px;
+
+    }
+    & > button{
       opacity: 0;
       height: 100%;
       width: 5vw;
@@ -105,7 +124,7 @@ const Title = styled.h1`
      transition: opacity 0.2s ease 0s;
    }
    .slick-dots li button:before{
-      color: #ffffff;
+      color: #6365bf;
    }
    
  `;
@@ -129,12 +148,13 @@ const Details = styled.div`
 `;
 
 const ButtonContainer = styled.div`
- position: relative; 
+ position: absolute; 
  display: flex;
  align-items: center;
  justify-content: flex-end;
  padding-right: 1rem; 
- margin-top: -50px;
+ bottom: .5rem;
+ right: 2px;
  
  &:hover{
  cursor: pointer;
@@ -173,16 +193,20 @@ const PreOrder =styled.button`
 `;
 
 const SliderContainer = styled.div`
- margin: 2rem;
+margin: 4rem 2rem 2rem 2rem;
+@media (min-width: 686px){
+  margin: 4rem 3rem 2rem .5rem;
+
+}
 `;
   
 const Background = styled.div`
   position: relative;
   z-index: -1; 
   border-radius: 15px;
-  transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-  box-shadow: rgb(0 0 0 / 69%) 0px 26px 36px -10px,
-  rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+  // transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  // box-shadow: rgb(0 0 0 / 69%) 0px 26px 36px -10px,
+  // rgb(0 0 0 / 73%) 0px 16px 10px -10px;
   
  
   
@@ -193,11 +217,17 @@ const ImgSlide = styled(motion.div)`
   
   img{
     width: 100%;
-    height: auto;
+    height: 270px;
+    max-height: 250px;
     transition: opacity 500ms ease-in-out 0s;
-    object-fit: contain;
     border-radius: 20px;
     opacity: 0.6;
+     @media (max-width: 768px){
+      height: 220px;
+     }
+     @media (min-width: 768px){
+      height: 320px;
+     }
 
   }
  

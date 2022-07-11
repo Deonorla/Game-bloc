@@ -1,11 +1,29 @@
 import styled from "styled-components";
+import { useRef, useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { GiRoundStar } from "react-icons/gi";
 import { RiSendPlaneFill } from "react-icons/ri";
 import { HiChat } from "react-icons/hi";
-import Data from "../Features/Data"
+import {  showDetails } from "../Features/cardSlice";
+
+
+import { useDispatch } from "react-redux";
 
 const CardView = () =>{
+     const [width, setWidth] = useState(0);
+     const Layout = useRef()
+     const dispatch = useDispatch();
+     const { Data, ...item } = useSelector((state)=> state.card)
+ 
+
+   
+
+     useEffect(() => {
+         setWidth(Layout.current.scrollWidth - Layout.current.offsetWidth)
+     }, [])
+     
     return(
         <CardContainer>
              <Heading>
@@ -15,17 +33,17 @@ const CardView = () =>{
              </Heading>
 
             
-             <CardLayout>
+             <CardLayout ref={Layout}  drag='x' dragConstraints={{right:0, left: -width}}>
 
                  {
-                   Data.data.map(list => {
+                   Data.map(list => {
                      return(
                          
-                     <NavLink to={'/details' + list.id } key={list.id}>
-                           <Card key={list.id}>
+                        <Card  key={list.id}>
+                              <NavLink to={'/details/' + list.id}  key={list.id}>
                            <Img>
                           
-                              <img src={list.img}alt="elden" />
+                              <img src={list.img} alt="img" />
                            </Img>
                            <Description>
                                  <Title>
@@ -38,13 +56,16 @@ const CardView = () =>{
                               </Summary>
 
                            </Description>
+                                    </NavLink>
 
                            <Interactions>
                               <Trend>{list.trend}</Trend>
                               <Container>
                                  <div>
-                                 <Star/>
-                                    <p>364</p>
+                                    
+                                    <Star onClick={()=>{dispatch(showDetails(list.img))}} /> 
+                                 
+                                    <p>{item.Star}</p>
                                  </div>
                                  <div>
                                  < Send  />
@@ -52,13 +73,12 @@ const CardView = () =>{
                                  </div>
                                     <div>
                                     <Message />
-                                    <p>36</p>
+                                    <p>{item.Comment}</p>
                                     </div>
                               </Container>
                            </Interactions>
 
                         </Card>            
-                     </NavLink>
                         
                      )
                    })
@@ -74,6 +94,10 @@ const CardView = () =>{
 
 const CardContainer = styled.div`
    margin: 1rem;
+   overflow: hidden;
+   @media (min-width: 686px){
+    margin-left: 2rem;
+   }
 `;
 
 const Heading = styled.div`
@@ -92,19 +116,20 @@ const Heading = styled.div`
  }
 `;
 
-const CardLayout = styled.div`
-   display: grid;
-   grid-template-columns: repeat(2, 1fr);
+const CardLayout = styled(motion.div)`
+   display: flex;
    gap: 1rem;
+   z-index: -1;
+  
   
 `;
 
 const Card = styled.div`
  display: flex;
  flex-direction: column;
+ min-width: 13rem;
  background-color: #35356b;
  border-radius: 12px;
-
  padding: 1.2rem .7rem 10px .5rem;
 
  @media (max-width: 500px){
@@ -115,6 +140,7 @@ const Card = styled.div`
 
 const Img = styled.div`
 img{
+    position: relative;
     width: 100%;
     height: 150px;
     border-radius: 12px;
@@ -144,8 +170,8 @@ const Title = styled.div`
   align-items: center;
 
   img{
-   width: 45px;
-   height: 45px;
+   width: 35px;
+   height: 35px;
    border-radius: 8px;
   }
 
@@ -179,10 +205,15 @@ const Trend = styled.p`
    background-color: #e23719;
    border-radius: 9999px;
    padding: 3px 16px 5px 16px;
-   color: #fff;
+   color:#fff;
 
    @media (max-width: 500px){
-     display: none;
+     position: absolute;
+     bottom: 16rem;
+     left: 5px;
+     background: rgba(255, 255, 255, 0.34);
+     box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+     backdrop-filter: blur(5px);
    }
     
 `;

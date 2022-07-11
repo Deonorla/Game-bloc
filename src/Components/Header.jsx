@@ -1,61 +1,103 @@
 // import { useState } from "react";
 import { motion, useCycle, AnimatePresence } from "framer-motion";
 import styled from "styled-components";
+import { HiChat } from "react-icons/hi";
+import user from "../assets/User 2.png";
+import virtual from "../assets/virtual.jpg";
+import { BiBell } from "react-icons/bi"
+import {AiOutlineSetting} from "react-icons/ai"
+import {HiOutlineMenuAlt2} from "react-icons/hi"
+
 const Header =()=>{
    const [navbar, setNavbar] = useCycle(false, true);
 
-//    const itemVariants = {
-//       closed:{
-//         opacity:0
-//       },
-//       open:{
-//         opacity: 1
-//       }
-//    }
+   const itemVariants = {
+      closed:{
+        width: 0,
+       
+      },
+      open:{
+        width: "12rem",
+         transition:{
+          duration: 1,
+          staggerChildren:0.2,
+          delayChildren: 1
+        }
+      }
+   }
 
-//    const sideVariants = {
-//     closed:{
-//       transition:{
-//         staggerChildren:0.2,
-//         staggerDirection: -1
-//       },
-//       open:{
-//         staggerChildren:0.2,
-//         staggerDirection: 1
-//       }
-//     },
-//     open:{
-//       opacity: 1
-//     }
-//  }
+   const sideVariants = {
+    closed:{
+        x: -500,
+        opacity: 0
+      },
+  
+    open:{
+      x: 0,
+      opacity: 1
+    }
+ }
 
 
     return(
         <Head>
            <LogoContainer>
+              <Img>
               <img src="logo.png" alt="logo" />
-              <Img src="hamburger.png" alt="menu" onClick={setNavbar} />
+              </Img>
 
+               <Profile>
+                <button> <p>Add Friends</p></button>
+                <Message/>
+                <img src={user} alt=""/>
+               </Profile>
+                 
+              <Hamenu onClick={setNavbar}   />
+            
                <AnimatePresence>
-                  { navbar && <Menu  initial={{width: 0}} animate={{width: "12rem"}} exit={{
+                  { navbar && <Menu  initial="closed" animate=  "open" variants={itemVariants} exit={{
                     width: 0,
                     transition:{delay:0.7, duration:0.3}
                   }}>
-                      <motion.aside initial="closed" animate="open" >
-                        <AvatarContainer>
-                          <ColorContainer>
-                                  <Red></Red>
-                                  <Yellow></Yellow>
-                                  <Green></Green>
+                      <motion.aside  >
+                        <AvatarContainer  variants={sideVariants} exit={{x: 10, opacity: 0,  transition:{delay:0.6, duration:0.3}}}>
+                          <img src={virtual} alt="avatar"/>
+
+                          <ColorContainer  variants={sideVariants}>
+
+                          <Red  variants={sideVariants}>
+                            <Bell  variants={sideVariants}/>
+                            <img src={user} alt="avatar"  variants={sideVariants}/>
+                             <Settings/>
+                          </Red>
+                          <Yellow  variants={sideVariants}>
+                            <h4>Netheream Lord</h4>
+                            <p>User Id: 23456</p>
+                          </Yellow>
+
+                          <Green  variants={sideVariants}>
+                            <div>
+                              <h4>Post</h4>
+                              <p>4K</p>
+                            </div>
+                            
+                            
+                            <div>
+                              <h4>Subscribers</h4>
+                              <p>200K</p>
+                            </div>
+                           
+
+                          </Green>
+                                  <button >Start a stream</button>
                           </ColorContainer>
-                          <img src="user.png" alt="avatar"/>
                       </AvatarContainer>
                       
-                        <motion.ul >
-                            <motion.li  whileHover={{scale: 1.1}}>Home</motion.li>
-                            <motion.li  whileHover={{scale: 1.1}}>Stream</motion.li>
-                            <motion.li  whileHover={{scale: 1.1}}>Game store</motion.li>
-                            <motion.li  whileHover={{scale: 1.1}}>News</motion.li>
+                        <motion.ul  >
+                            <motion.li variants={sideVariants} whileHover={{scale: 1.1}}>Home</motion.li>
+                            <motion.li variants={sideVariants} whileHover={{scale: 1.1}}>Stream</motion.li>
+                            <motion.li variants={sideVariants} whileHover={{scale: 1.1}}>Game store</motion.li>
+                            <motion.li variants={sideVariants} whileHover={{scale: 1.1}}>News</motion.li>
                         </motion.ul>
 
                       </motion.aside>
@@ -72,13 +114,71 @@ const Header =()=>{
 }
 
 const Head = styled.div`
+  position: fixed;
   background-color: #35356b;
   width: 100%;
+  z-index: 1000;
+  top: 0;
 `;
 
-const Img = styled.img`
- font-size: 60px;
+const Profile = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+
+img{
+  margin: 0 1rem;
+}
+button{
+  display: flex;
+  background: transparent;
+  border: 1px solid #6365bf;
+  border-radius: 9999px;
+  height: 25px;
+  padding: .3rem 1rem;
+ img{
+  margin: 0;
+  width: 30px;
+  height: 30px;
+}
+p{
+   margin: 0;
+  color: #6365bf;
+ }
+
+
+}
+
+@media screen and (max-width: 686px){
+   display: none;
+ }
+`;
+
+const Hamenu = styled( HiOutlineMenuAlt2)`
+color:#6365bf;
+margin-left: 1rem;
+font-size: 26px;
  cursor: pointer;
+ @media (min-width: 686px){
+  display: none;
+ }
+`;
+const Message = styled( HiChat)`
+color:#6365bf;
+font-size: 21px;
+margin-left: 1rem;
+`;
+
+const Bell = styled(BiBell)`
+color:#6365bf;
+font-size: 26px;
+margin-top: 1.2rem;
+
+`;
+const Settings = styled(AiOutlineSetting)`
+margin-top: 1.2rem;
+color:#6365bf;
+font-size: 26px;
 `;
 
 const Menu = styled(motion.div)`
@@ -108,48 +208,110 @@ li{
 }
 `;
 
-const AvatarContainer = styled.div`
+const AvatarContainer = styled(motion.div)`
     display: flex;
     flex-direction: column;
+    margin: 1rem .5rem;
+    background: #35356b;
+    border-radius: 12px;
+    position: relative;
     
-     img{
-        cursor: pointer;
-        margin: 2rem;
-        width: 60px;
-        height: 60px;
-        z-index: 1;
+    img{
+      border-top-right-radius: 12px;
+      border-top-left-radius: 12px;
+      cursor: pointer;
+        width: 100%;
+        height: 100px;
     }
 `;
 
-const ColorContainer = styled.div`
+const ColorContainer = styled(motion.div)`
   display: flex;
-  flex-direction: row; 
-  margin-top: 2rem;
-  margin-left: 1rem;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  button{
+    border: none;
+    margin-top: 1rem;
+    border-radius: 9999px;
+    padding: .3rem 1rem;
+    background-color: #3f3f6e;
+    color: #6365bf;
+    font-size: 18px;
+    box-shadow: rgb(0 0 0 / 29%) 5px 26px 36px 10px,
+ rgb(0 0 0 / 53%) 10px 16px 10px -10px; 
+ 
+ &hover{
+  transform: scale(1.05);
+ }
+  }
 `;
 
-const Red = styled.div`
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: red;
-  margin-right: 4px;
+const Red = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  margin: 0 auto;
+  top: 4rem;
+
+  img{
+    width: 70px;
+    height: 70px;
+    padding: 0;
+    margin: 0 .5rem;
+  
+  }
 `;
 
-const Yellow = styled.div`
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: yellow;
-  margin-right: 4px;
+const Yellow = styled(motion.div)`
+ justify-content: center;
+ align-items: center;
+ margin-top: 1rem;
+ h4{
+  color:#6365bf;
+  font-size: 18px;
+  margin: 1.5rem 0 0 0;
+ }
+ p{
+  color:#6365bf;
+  font-size: 18px;
+  margin-top: 8px;
+  text-align: center;
+ }
 `;
 
-const Green = styled.div`
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: green;
+const Green = styled(motion.div)`
+ display: grid;
+ grid-template-columns: repeat(2, 1fr);
+ gap: .4rem;
+ div{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 0 .5rem;
+
+   h4{
+    margin: 0;
+    color: #6365bf;
+   }
+
+   p{
+    color: #6365bf;
+    margin: 0;
+   }
+ }
 `;
+
+// const Bar = styled.div`
+//  border-right: 1px solid #6365bf ;
+//  height: 2.3rem;
+//  margin: 0 .3rem;
+// `;
+
 
 const LogoContainer = styled.div`
  position: relative;
@@ -159,11 +321,13 @@ const LogoContainer = styled.div`
  justify-content: space-between;
  padding: 0 .5rem;
  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
- img{
-  margin-right: 1rem;
-  margin-bottom: .5rem;
- }
  
+`;
+
+const Img = styled.div`
+ img{
+  margin: 0 16px 8px 0;
+ }
 `;
 
 //  background: rgba(255,255,255, 0.5);
