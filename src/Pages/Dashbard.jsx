@@ -12,6 +12,7 @@ import { AiFillMessage} from "react-icons/ai";
 import { AiTwotoneStar} from "react-icons/ai";
 import user from "../assets/User 2.png";
 import virtual from "../assets/virtual.jpg";
+import Chat from "../Components/Chat";
 
 const Dashboard = () =>{
     return(
@@ -54,24 +55,24 @@ const Dashboard = () =>{
 
                       <MenuBox>
                 <div>
-                  <Messages/>
                   <h4>Messages</h4>
+                  <Messages/>
                 </div>
                 <div>
-                  <Library/>
                   <h4>Library</h4>
+                  <Library/>
                 </div>
                 <div>
-                  <Favourite/>
                   <h4>Favourite</h4>
+                  <Favourite/>
                 </div>
                 <div>
-                  <Friends/>
                   <h4>Friends</h4>
+                  <Friends/>
                 </div>
                 <div>
-                  <Messages/>
                   <h4>Messages</h4>
+                  <Messages/>
                 </div>
 
               </MenuBox>
@@ -85,11 +86,28 @@ const Dashboard = () =>{
            <CardView/>
 
           </Container>
-      </Wrapper>
+         <Chathome>
+          <Chat/>
+
+         </Chathome>
+
+        </Wrapper>
     )
 }
 
 const Wrapper = styled.div`
+
+`;
+
+const Chathome = styled.div`
+display: none;
+@media (min-width: 686px){
+  display: block;
+  position: fixed;
+  right: 0;
+  top: 2.5rem;
+
+}
 `;
 
 const Nav = styled.div`
@@ -98,7 +116,7 @@ const Nav = styled.div`
   position: fixed; 
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
+  top: 3.5rem;
   margin-left: 1rem;
   
 }
@@ -108,6 +126,7 @@ const Nav = styled.div`
 const Container = styled.div`
 @media (min-width: 686px){
    margin-left: 15rem;
+   margin-top: 3rem;
 }
 `;
 
@@ -149,11 +168,13 @@ const ColorContainer = styled(motion.div)`
     background-color: #3f3f6e;
     color: #6365bf;
     font-size: 12px;
+    cursor: pointer;
     box-shadow: rgb(0 0 0 / 29%) 5px 26px 36px 10px,
  rgb(0 0 0 / 53%) 10px 16px 10px -10px; 
  
- &hover{
+ &:hover{
   transform: scale(1.05);
+  translate: 5s ease in ;
  }
   }
 `;
@@ -162,12 +183,14 @@ const Bell = styled(BiBell)`
 color:#6365bf;
 font-size: 26px;
 margin-top: 1.2rem;
-
+cursor: pointer;
 `;
+
 const Settings = styled(AiOutlineSetting)`
 margin-top: 1.2rem;
 color:#6365bf;
 font-size: 26px;
+cursor: pointer;
 `;
 
 
@@ -216,11 +239,13 @@ padding-right: .5rem;
    justify-content: center;
    align-items: center;
    padding: 0 .5rem;
-
+   
+   
    h4{
     margin: 0;
     color: #6365bf;
     font-size: 12px;
+    
   }
   
   p{
@@ -228,6 +253,8 @@ padding-right: .5rem;
     color: #6365bf;
     margin: 0;
    }
+
+  
  }
 `;
 
@@ -243,6 +270,11 @@ const MenuBox = styled.div`
      flex-direction: row;
      justify-content: space-between;
      align-items: center;
+
+     &:hover{
+      transform: scale(1.05);
+     
+     }
     }
  
     h4{
@@ -250,6 +282,7 @@ const MenuBox = styled.div`
      font-size: 12px;
      margin: .4rem .3rem 1.2rem 0;
      padding-top: .4rem;
+     cursor: pointer;
     }
   
   
@@ -276,6 +309,8 @@ const Favourite = styled(AiTwotoneStar)`
 font-size: 21px;
 color: #6365bf;
 `;
+
+
 
 
 export default Dashboard;

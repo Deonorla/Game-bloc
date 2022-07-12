@@ -96,7 +96,8 @@ const CardContainer = styled.div`
    margin: 1rem;
    overflow: hidden;
    @media (min-width: 686px){
-    margin-left: 2rem;
+    margin-left: 10px;
+    margin-right: 18rem;
    }
 `;
 
@@ -104,10 +105,11 @@ const Heading = styled.div`
  display: flex;
  flex-direction: row;
  align-items: center;
- margin-left: 1rem;
+ margin: 7px 0 .7rem 1rem;
 
  h4{
     color: #df78e3;
+   
  }
 
  span{
@@ -145,6 +147,9 @@ img{
     height: 150px;
     border-radius: 12px;
     cursor: pointer;
+    @media  (min-width: 686px){
+      height: 100px;
+    }
 }
 `;
 
@@ -154,7 +159,9 @@ const Description = styled.div`
  justify-content: center;
  align-items: center;
  margin-top: 8px;
- 
+ p{
+   margin: 0;
+ }
 `;
 
 const Bar = styled.div`

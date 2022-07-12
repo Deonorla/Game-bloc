@@ -150,7 +150,6 @@ const SearchBox = () =>{
 
         </SearchContainer>
         
-
     )
 }
 
@@ -162,7 +161,8 @@ const SearchContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   @media (min-width: 686px){
-    margin-left: 2rem;
+    margin-left: 10px;
+    margin-right: 18rem;
   }
     
 `;
@@ -228,6 +228,10 @@ const Category = styled.div`
   h3{
     color: #df78e3;
     cursor: pointer;
+    @media (min-width: 686px){
+
+      margin: 0 0 0 1rem;
+    }
   }
 `;
 

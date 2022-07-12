@@ -89,6 +89,9 @@
 
 const Title = styled.h1`
    color: #df78e3;
+   @media (min-width: 1000px){
+    font-size: 1.5rem;
+   }
 `;
 
 
@@ -104,7 +107,7 @@ const Title = styled.h1`
  @media (min-width: 768px ){
    max-height: 250px;
    width: 100%;
-   margin-left: 1rem;
+
 
  }
 
@@ -195,7 +198,7 @@ const PreOrder =styled.button`
 const SliderContainer = styled.div`
 margin: 4rem 2rem 2rem 2rem;
 @media (min-width: 686px){
-  margin: 4rem 3rem 2rem .5rem;
+  margin: 6rem 18rem 2rem 0;
 
 }
 `;
