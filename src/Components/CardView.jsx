@@ -95,9 +95,15 @@ const CardView = () =>{
 const CardContainer = styled.div`
    margin: 1rem;
    overflow: hidden;
-   @media (min-width: 686px){
-    margin-left: 10px;
-    margin-right: 18rem;
+   border-radius: 12px;
+
+   @media (min-width: 686px) and  (max-width: 999px){
+      margin: 0 1rem 0 0;
+     }
+
+   @media (min-width: 1000px){
+    margin-left: 7px;
+    margin-right: 17rem;
    }
 `;
 
@@ -122,8 +128,6 @@ const CardLayout = styled(motion.div)`
    display: flex;
    gap: 1rem;
    z-index: -1;
-  
-  
 `;
 
 const Card = styled.div`

@@ -101,7 +101,7 @@ const Wrapper = styled.div`
 
 const Chathome = styled.div`
 display: none;
-@media (min-width: 686px){
+@media (min-width: 1000px){
   display: block;
   position: fixed;
   right: 0;
@@ -125,7 +125,7 @@ const Nav = styled.div`
 
 const Container = styled.div`
 @media (min-width: 686px){
-   margin-left: 15rem;
+   margin-left: 13.5rem;
    margin-top: 3rem;
 }
 `;

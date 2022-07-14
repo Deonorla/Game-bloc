@@ -197,7 +197,12 @@ const PreOrder =styled.button`
 
 const SliderContainer = styled.div`
 margin: 4rem 2rem 2rem 2rem;
-@media (min-width: 686px){
+
+@media (min-width: 686px) and  (max-width: 999px){
+ margin:6rem 2rem 2rem 0;
+
+}
+@media (min-width: 1000px){
   margin: 6rem 18rem 2rem 0;
 
 }

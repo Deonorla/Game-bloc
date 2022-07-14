@@ -160,7 +160,12 @@ const SearchContainer = styled.div`
   flex-direction: row; 
   justify-content: space-between;
   align-items: center;
-  @media (min-width: 686px){
+
+   @media (min-width: 686px) and  (max-width: 999px){
+      margin: 0 1rem 0 0;
+     }
+
+  @media (min-width: 1000px){
     margin-left: 10px;
     margin-right: 18rem;
   }
