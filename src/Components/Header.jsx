@@ -7,6 +7,10 @@ import virtual from "../assets/virtual.jpg";
 import { BiBell } from "react-icons/bi"
 import {AiOutlineSetting} from "react-icons/ai"
 import {HiOutlineMenuAlt2} from "react-icons/hi"
+import { HiCollection } from "react-icons/hi";
+import { FaUserFriends } from "react-icons/fa";
+import { AiFillMessage} from "react-icons/ai";
+import { AiTwotoneStar} from "react-icons/ai";
 
 const Header =()=>{
    const [navbar, setNavbar] = useCycle(false, true);
@@ -93,12 +97,31 @@ const Header =()=>{
                           </ColorContainer>
                       </AvatarContainer>
                       
-                        <motion.ul  >
-                            <motion.li variants={sideVariants} whileHover={{scale: 1.1}}>Home</motion.li>
-                            <motion.li variants={sideVariants} whileHover={{scale: 1.1}}>Stream</motion.li>
-                            <motion.li variants={sideVariants} whileHover={{scale: 1.1}}>Game store</motion.li>
-                            <motion.li variants={sideVariants} whileHover={{scale: 1.1}}>News</motion.li>
-                        </motion.ul>
+                      
+                <MenuBox  variants={sideVariants} exit={{x: 10, opacity: 0,  transition:{delay:0.6, duration:0.3}}}>
+                        <div>
+                          <h4>Messages</h4>
+                          <Messages/>
+                        </div>
+                        <div>
+                          <h4>Library</h4>
+                          <Library/>
+                        </div>
+                        <div>
+                          <h4>Favourite</h4>
+                          <Favourite/>
+                        </div>
+                        <div>
+                          <h4>Friends</h4>
+                          <Friends/>
+                        </div>
+                        <div>
+                          <h4>Messages</h4>
+                          <Messages/>
+                        </div>
+
+              </MenuBox>
+
 
                       </motion.aside>
                   
@@ -152,6 +175,60 @@ p{
 @media screen and (max-width: 686px){
    display: none;
  }
+`;
+
+
+const MenuBox = styled(motion.div)`
+    display: flex;
+    flex-direction: column;
+    background: #35356b;
+    padding: .7rem 1.2rem;
+    border-radius: 12px;
+    margin: 1rem .5rem;
+    div{
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     align-items: center;
+
+     &:hover{
+      transform: scale(1.05);
+     
+     }
+    }
+ 
+    h4{
+     color: #6365bf;
+     font-size: 12px;
+     margin: .4rem .3rem 1.2rem 0;
+     padding-top: .4rem;
+     cursor: pointer;
+    }
+  
+  
+`;
+
+
+
+const Library = styled(HiCollection)`
+
+font-size: 21px;
+color: #6365bf;
+`;
+const Friends = styled(FaUserFriends)`
+
+font-size: 21px;
+color: #6365bf;
+`;
+const Messages = styled(AiFillMessage)`
+
+font-size: 21px;
+color: #6365bf;
+`;
+const Favourite = styled(AiTwotoneStar)`
+
+font-size: 21px;
+color: #6365bf;
 `;
 
 const Hamenu = styled( HiOutlineMenuAlt2)`

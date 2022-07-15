@@ -6,7 +6,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color:rgba(39,38,78,255);
+
 }
+
+body::-webkit-scrollbar{
+  -webkit-appearance: none;
+  border: none;
+  width: 5px;
+  height: .5rem;
+ }
+ body::-webkit-scrollbar-thumb{
+  background-color: #df78e3;
+  border-radius: 9999px;
+ }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

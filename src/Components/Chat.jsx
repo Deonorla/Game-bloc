@@ -1,10 +1,14 @@
 import styled from "styled-components";
 import { RiSendPlaneFill } from "react-icons/ri";
- import user from "../assets/user.png";
- import user1 from "../assets/User 2.png";
- import user2 from "../assets/User 4.png";
  import back from "../assets/scifi.jpg";
- 
+ import u1 from "../assets/u.png";
+ import u2 from "../assets/u2.png";
+ import u3 from "../assets/u3.png";
+ import u4 from "../assets/u4.png";
+ import u5 from "../assets/u5.png";
+ import u6 from "../assets/u6.png";
+ import u7 from "../assets/u7.png";
+
 
  const Chat =()=>{
     return(
@@ -18,7 +22,12 @@ import { RiSendPlaneFill } from "react-icons/ri";
 
             <Chatheader>
                 <Avatar>
-
+                   <Image> <img src={u1} alt=""/> </Image>
+                   <Image> <img src={u2} alt=""/> </Image>
+                   <Image> <img src={u3} alt=""/> </Image>
+                   <Image> <img src={u4} alt=""/> </Image>
+                   <Image> <img src={u5} alt=""/> </Image>
+                   <Image> <img src={u6} alt=""/> </Image>
                 </Avatar>
 
 
@@ -44,9 +53,9 @@ import { RiSendPlaneFill } from "react-icons/ri";
                                 <Align>
                                 <h4>Lina invited you to join MRV Group</h4>
                                  <Flip>
-                                    <Img1 src={user} alt=""/>
-                                    <Img2 src={user1} alt=""/>
-                                    <Img3 src={user2} alt=""/>
+                                    <Img1 src={u2} alt=""/>
+                                    <Img2 src={u1} alt=""/>
+                                    <Img3 src={u6} alt=""/>
                                  </Flip>
                                 </Align>
                                 <BottomCard>
@@ -111,9 +120,52 @@ const Title = styled.div`
      background: #35356b;
      border-radius: 12px;
      padding: .5rem 0 1rem .5rem;
+
  `;
 
 const Avatar = styled.div`
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: space-between;
+ margin: 0 .5rem 0 1rem ;
+ padding: .5rem 0; 
+ border-radius: 9999px;
+ background-color: #3f3f72;
+ width: 60px;
+ height: 180px;
+ overflow: auto;
+ position: fixed;
+ right: 0;
+ top: 9rem;
+
+ &::-webkit-scrollbar{
+  -webkit-appearance: none;
+  width: 3px;
+  height: 15px;
+  border: none;
+ }
+ &::-webkit-scrollbar-thumb{
+  background-color: #df78e3;
+  border-radius: 9999px;
+ }
+`;
+
+const Image = styled.div`
+&:hover{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1.05);
+  background-color: #df78e3;
+  border-radius: 9999px;
+  padding: .3rem;
+}
+img{
+  width: 40px;
+  height: 40px;
+}
+
 
 `;
 

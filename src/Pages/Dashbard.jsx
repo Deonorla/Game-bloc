@@ -4,6 +4,7 @@ import CardView from "../Components/CardView";
 import Header from "../Components/Header";
 import HomeSlider from "../Components/HomeSlider";
 import SearchBox from "../Components/SearchBox";
+import Hub from "../Components/Hub";
 import { BiBell } from "react-icons/bi"
 import {AiOutlineSetting} from "react-icons/ai"
 import { HiCollection } from "react-icons/hi";
@@ -84,11 +85,13 @@ const Dashboard = () =>{
            <HomeSlider/>
            <SearchBox/>
            <CardView/>
+           <Hub/>
 
           </Container>
+
+
          <Chathome>
           <Chat/>
-
          </Chathome>
 
         </Wrapper>
@@ -106,7 +109,7 @@ display: none;
   position: fixed;
   right: 0;
   top: 2.5rem;
-
+ overflow: auto;
 }
 `;
 
@@ -115,6 +118,7 @@ const Nav = styled.div`
 @media (min-width: 686px){
   position: fixed; 
   display: flex;
+  height: 100%;
   flex-direction: column;
   top: 3.5rem;
   margin-left: 1rem;
