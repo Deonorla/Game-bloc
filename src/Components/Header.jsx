@@ -2,9 +2,10 @@
 import { motion, useCycle, AnimatePresence } from "framer-motion";
 import styled from "styled-components";
 import { HiChat } from "react-icons/hi";
-import user from "../assets/User 2.png";
+import user from "../assets/u.png";
+import logo from "../assets/logo.png";
 import virtual from "../assets/virtual.jpg";
-import { BiBell } from "react-icons/bi"
+import { BiBell } from "react-icons/bi";
 import {AiOutlineSetting} from "react-icons/ai"
 import {HiOutlineMenuAlt2} from "react-icons/hi"
 import { HiCollection } from "react-icons/hi";
@@ -47,7 +48,7 @@ const Header =()=>{
         <Head>
            <LogoContainer>
               <Img>
-              <img src="logo.png" alt="logo" />
+              <img src={logo} alt="logo" />
               </Img>
 
                <Profile>
@@ -151,6 +152,8 @@ align-items: center;
 
 img{
   margin: 0 1rem;
+  width: 40px;
+  height: 40px;
 }
 button{
   display: flex;

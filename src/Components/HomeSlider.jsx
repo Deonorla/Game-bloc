@@ -11,7 +11,7 @@
       {  
          id:'1',
          img:'gotham-knights.jpeg',
-         title:'Pre-order Elden Ring Now',
+         title:'Gotham Knight coming soon. Get Access!',
          description:'The game will be released on July 5th 2022 and will be available on Ps5, X-box and PC '
 
       },

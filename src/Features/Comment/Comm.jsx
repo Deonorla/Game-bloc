@@ -2,17 +2,18 @@ import styled from "styled-components";
 import { RiSendPlaneFill } from "react-icons/ri";
 
 
-const Comment = (props) =>{
+const Comm = (props) =>{
     return(
         <Container>
              <h2>Feedback</h2>
 
             { props.Data.map((item)=>{
               return(
-                <CommentContainer key={item.id}>
+                <Contain key={item.id}>
+                <CommentContainer >
                
                 <User>
-                     <Detail><img src={item.avatar} alt=""/> <h2>{item.name}</h2></Detail>
+                     <Detail><img src={item.avatar} alt=""/> <h4>{item.name}</h4></Detail>
                      <p>{item.time}</p>
                 </User>
 
@@ -20,10 +21,12 @@ const Comment = (props) =>{
                     {item.comment}
                 </Words>
 
-                <Bar></Bar>
+              
                 
                 
             </CommentContainer>
+                   <Bar></Bar>
+                </Contain>
               )
             })
            
@@ -40,68 +43,63 @@ const Comment = (props) =>{
 }
 
 const Container = styled.div`
- position: absolute;
- h2{ 
-  font-size: 1.1rem;
-   margin-left: 2rem;
-   color:#6365bf;
-  }
+ h2{
+    margin-left: 2rem;
+    color:#6365bf;
+ }
+`;
 
-  @media (max-height: 890px){
-    top: 1rem;
-  }
-  
-  @media (min-height: 1000px) {
-    top: -20rem;
-  }
-  @media (min-height: 1100px) {
-    top: -30rem;
-  }
+const Contain = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const CommentContainer = styled.div`
    background-color:  #35356b;
    border-radius: 12px;
    padding: 1rem .8rem;
-   margin: .2rem 1rem  3rem 1rem;
+   margin: .2rem 1rem 0 1rem;
+   width: 25rem;
 `;
 
 const User = styled.div`
    display: flex;
    flex-direction: row;
    justify-content: space-between;
+   align-items: center;
    
    p{
     color:#6365bf;
-    font-size: 1.3rem;
+    font-size: .8rem;
    }
    
 `;
 const Detail = styled.div`
   display: flex;
   flex-direction: row; 
-
+  align-items: center;
   img{
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
   }
-      h2{
-          margin-left: .5rem;
+      h4{
+        margin-left: .5rem;
           color:#6365bf;
+          font-size: 15px;
       }
 `;
 
 const Words = styled.p`
   color:#6365bf;
-  font-size: 1.3rem;
+  font-size: 1rem;
   margin: 0;
 `;
 
 const Bar = styled.div`
  border-bottom: 1px solid #6365bf;
- position: absolute;
- margin-top: 3rem;
- width: 85%;
+ margin: 1rem 0;
+ width: 50%;
 `;
 
 const Search = styled.form`
@@ -111,10 +109,8 @@ const Search = styled.form`
   flex-direction: row;
   background: transparent;
   border-radius: 12px;
-  margin: 8rem 1rem 0 1rem;
+  margin: 3rem 1rem 1rem 1rem;
   padding: .8rem 0 .8rem .8rem;
-  margin-top: 7rem;
-  margin-bottom: 1rem;
   background-color:  #35356b;
 `;
 
@@ -155,4 +151,4 @@ color:#6365bf;
 font-size: 21px;
 `;
 
-export default Comment;
+export default Comm;

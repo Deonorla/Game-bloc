@@ -7,7 +7,7 @@ import {AiOutlineEye} from "react-icons/ai"
 const Hub =()=>{
 
     return(
-        <div>
+        <Hubcontainer>
              <Notch>
                 <div></div>
              </Notch>
@@ -54,9 +54,17 @@ const Hub =()=>{
                 </Stream>
              </Gaming>
            
-       </div>
+       </Hubcontainer>
     )
 }
+
+const Hubcontainer =styled.div`
+
+   @media (min-width: 1000px){
+    margin-left: 7px;
+    margin-right: 17rem;
+   }
+`;
 
 const Notch = styled.div`
 display: flex;
@@ -116,6 +124,10 @@ const Slider = styled(motion.div)`
 &::-webkit-scrollbar-thumb{
     border-radius: 9999px;
     background-color: #df78e3;
+    visibility: hidden;
+}
+&:hover::-webkit-scrollbar-thumb{
+    visibility: visible;
 }
 
 `;
@@ -226,7 +238,6 @@ p{
     border-radius: 9999px;
     padding: .2rem 1rem;
     
-  
 }
 `;
 

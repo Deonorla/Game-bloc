@@ -15,9 +15,16 @@ body::-webkit-scrollbar{
   width: 5px;
   height: .5rem;
  }
+
  body::-webkit-scrollbar-thumb{
-  background-color: #df78e3;
+  background-color: #6365bf;
   border-radius: 9999px;
+  visibility: visible;
+}
+
+body:hover::-webkit-scrollbar-thumb{
+  visibility: hidden;
+  opacity: 0.3;
  }
 
 code {
