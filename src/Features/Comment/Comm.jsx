@@ -37,7 +37,6 @@ const Comm = (props) =>{
               <Button><Send/></Button>
             </Search>
 
-                       
         </Container>
     )
 }

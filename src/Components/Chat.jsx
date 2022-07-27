@@ -28,6 +28,7 @@ import { RiSendPlaneFill } from "react-icons/ri";
                    <Image> <img src={u4} alt=""/> </Image>
                    <Image> <img src={u5} alt=""/> </Image>
                    <Image> <img src={u6} alt=""/> </Image>
+                   <Image> <img src={u7} alt=""/> </Image>
                 </Avatar>
 
 

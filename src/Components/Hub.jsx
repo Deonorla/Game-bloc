@@ -2,6 +2,7 @@
 import styled from "styled-components";
 import {motion} from "framer-motion"
 import Hubdata from "../Features/Hubdata";
+import Activestream from "./Activestream";
 import {AiOutlineEye} from "react-icons/ai"
 
 const Hub =()=>{
@@ -50,7 +51,9 @@ const Hub =()=>{
                 </Slidercontainer>
 
                 <Stream>
-                    <Activestream><h3>Active Streams</h3> <p>Live</p></Activestream>
+                    <Active><h3>Active Streams</h3> <p>Live</p></Active>
+
+                    <Activestream/>
                 </Stream>
              </Gaming>
            
@@ -215,7 +218,7 @@ h4{
 const Stream = styled.div`
 margin: 2rem .2rem;
 `;
-const Activestream = styled.div`
+const Active = styled.div`
 margin: 0 1rem;
 display:flex;
 flex-direction: row;

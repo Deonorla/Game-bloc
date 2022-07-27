@@ -1,6 +1,7 @@
  import styled from "styled-components";
  import Slider from "react-slick";
  import { motion } from "framer-motion";
+ import vid from "../Features/Videos/kombat.mp4";
  import "slick-carousel/slick/slick.css";
  import "slick-carousel/slick/slick-theme.css";
 
@@ -49,8 +50,8 @@
             Discover
       </Title>
    
+    <Container>
 
-  
       <Carousel {...settings}>
      
      { imgData.map((data, index)=>{
@@ -78,6 +79,17 @@
 
 
 </Carousel>
+
+<Wrap>
+
+<video autoPlay loop muted >
+   <source src={vid} type="video/mp4" />
+</video>
+
+</Wrap>
+
+    </Container>
+  
      
      
      </SliderContainer>
@@ -109,6 +121,10 @@ const Title = styled.h1`
    width: 100%;
 
 
+ }
+
+ @media (min-width: 1000px) {
+   width: 60%;
  }
 
  .slick-slider img{
@@ -241,5 +257,33 @@ const ImgSlide = styled(motion.div)`
  
  `;
 
+const Container = styled.div`
+ display: flex;
+ flex-direction: row;
+`;
+
+const Wrap = styled.div`
+ display: none;
+@media (min-width: 1000px){
+  margin: 0 0 0 .5rem;
+  display: flex;
+  width: 100%;
+  max-height: 250px;
+  box-shadow: rgb(0 0 0 / 69%) 0px 26px 36px -10px,
+  rgb(0 0 0 / 73%) 0px 16px 10px -10px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 20px;
+
+video{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  object-fit: cover;
+}
+}
+`;
 
  export default HomeSlider;
