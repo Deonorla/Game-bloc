@@ -225,7 +225,7 @@ flex-direction: row;
 align-items: center;
 
 h3{
-    font-size: 22px;
+    font-size: 18px;
     color: #df78e3;
     margin: 0 1rem 0 0;
 }
@@ -234,7 +234,7 @@ p{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
+    font-size: 16px;
     color: #fff;
     width: fit-content;
     background-color: #df78e3;

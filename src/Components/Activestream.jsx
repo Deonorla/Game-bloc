@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import {AiOutlineEye} from "react-icons/ai";
 import vid from "../Features/Videos/god.mp4";
-import vid1 from "../Features/Videos/videoplayback (1).mp4";
+import vid1 from "../Features/Videos/kombat.mp4";
 import vid2 from "../Features/Videos/gotham.mp4";
 import vid3 from "../Features/Videos/creed.mp4";
-import vid4 from "../Features/Videos/elden.mp4";
 import u1 from "../assets/u7.png";
 
 const Activestream = ( ) =>{

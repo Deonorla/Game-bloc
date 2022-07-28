@@ -1,7 +1,7 @@
  import styled from "styled-components";
  import Slider from "react-slick";
  import { motion } from "framer-motion";
- import vid from "../Features/Videos/kombat.mp4";
+ import vid from "../Features/Videos/elden.mp4";
  import "slick-carousel/slick/slick.css";
  import "slick-carousel/slick/slick-theme.css";
 
