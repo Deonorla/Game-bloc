@@ -155,7 +155,7 @@ const SearchBox = () =>{
 
 
 const SearchContainer = styled.div`
-  margin: 1rem 2rem;
+  margin: 2rem  2rem 1rem 2rem ;
   display: flex;
   flex-direction: row; 
   justify-content: space-between;
@@ -192,7 +192,11 @@ const Search = styled.form`
   border-radius: 9999px;
   margin: 0 1rem 0 0;
   padding:0  0 0 15px;
-  
+  @media (max-width: 400px){
+   width: 100px;
+   padding: 0 0 0 6px; 
+   margin: 0 .5rem 0 0;
+  }
  
 `;
 
@@ -202,11 +206,18 @@ const Input = styled.input`
   background: transparent;
   border: none;
   
+  @media (max-width: 400px){
+   width: 60px;
+
+  }
  
 
   &::-webkit-input-placeholder{
     color: white;
-    
+    @media (max-width: 400px){
+     font-size: 10px;
+    }
+  
   }
   &:focus{
     border: none;
@@ -233,6 +244,10 @@ const Category = styled.div`
   h3{
     color: #df78e3;
     cursor: pointer;
+    @media (max-width: 400px){
+     font-size: 13px;
+    }
+
     @media (min-width: 686px){
 
       margin: 0 0 0 1rem;
@@ -279,6 +294,10 @@ const Filter = styled.div`
 
  img{
     cursor: pointer;
+    @media (max-width: 400px){
+      width: 20px;
+      height: 20px;
+     }
  }
 `;
 

@@ -5,7 +5,6 @@
  import "slick-carousel/slick/slick.css";
  import "slick-carousel/slick/slick-theme.css";
 
-
  const HomeSlider = ()=>{
 
    const imgData = [
@@ -101,8 +100,17 @@
 
 const Title = styled.h1`
    color: #df78e3;
+   @media (max-width: 400px){
+     font-size: 13px;
+    }
    @media (min-width: 1000px){
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+   }
+   @media (min-width: 600px){
+    font-size: 1.3rem;
+   }
+   @media (min-width: 401px){
+    font-size: 1.2rem;
    }
 `;
 
@@ -115,6 +123,7 @@ const Title = styled.h1`
  border-radius: 20px;
  max-height: 220px;
  width: 100%;
+
 
  @media (min-width: 768px ){
    max-height: 250px;
@@ -212,14 +221,18 @@ const PreOrder =styled.button`
 `;
 
 const SliderContainer = styled.div`
-margin: 4rem 2rem 2rem 2rem;
+margin: 4rem 1rem 1rem 2rem;
 
+@media  (max-width: 375px){
+ margin:4rem 1rem 1rem 1rem;
+
+}
 @media (min-width: 686px) and  (max-width: 999px){
  margin:6rem 2rem 2rem 0;
 
 }
 @media (min-width: 1000px){
-  margin: 6rem 18rem 2rem 0;
+  margin: 4.5rem 18rem 2rem 0;
 
 }
 `;
@@ -241,17 +254,19 @@ const ImgSlide = styled(motion.div)`
   
   img{
     width: 100%;
-    height: 270px;
     max-height: 250px;
     transition: opacity 500ms ease-in-out 0s;
     border-radius: 20px;
     opacity: 0.6;
+    
+    @media  (max-width: 376px){
+     height: 150px;
+
+    }
      @media (max-width: 768px){
       height: 220px;
      }
-     @media (min-width: 768px){
-      height: 320px;
-     }
+     
 
   }
  

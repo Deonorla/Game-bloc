@@ -54,7 +54,9 @@ const Dashboard = () =>{
                           </ColorContainer>
                       </AvatarContainer>
 
-                      <MenuBox>
+                <Enclosed>
+                  
+              <MenuBox> 
                 <div>
                   <h4>Messages</h4>
                   <Messages/>
@@ -72,11 +74,20 @@ const Dashboard = () =>{
                   <Friends/>
                 </div>
                 <div>
-                  <h4>Messages</h4>
+                  <h4>Tornaments</h4>
+                  <Messages/>
+                </div>
+                <div>
+                  <h4>Gift Box</h4>
+                  <Messages/>
+                </div>
+                <div>
+                  <h4>Wachlist</h4>
                   <Messages/>
                 </div>
 
               </MenuBox>
+                </Enclosed>
 
          </Nav>
 
@@ -130,7 +141,7 @@ const Nav = styled.div`
 const Container = styled.div`
 @media (min-width: 686px){
    margin-left: 13.5rem;
-   margin-top: 3rem;
+   margin-top: 1rem;
 }
 `;
 
@@ -269,6 +280,7 @@ const MenuBox = styled.div`
     background: #35356b;
     padding: .7rem 1.2rem;
     border-radius: 12px;
+   
     div{
      display: flex;
      flex-direction: row;
@@ -292,6 +304,22 @@ const MenuBox = styled.div`
   
 `;
 
+const Enclosed = styled.div`
+  height: 19rem;
+  border-radius: 12px;
+  overflow-y: auto;
+
+    ::-webkit-scrollbar{
+      width: 5px;
+      height: 10px;
+
+    }
+    ::-webkit-scrollbar-thumb{
+      background-color: #6365bf;
+      height: 10px;
+      border-radius: 9999px;
+    }
+`;
 
 const Library = styled(HiCollection)`
 

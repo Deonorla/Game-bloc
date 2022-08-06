@@ -73,6 +73,7 @@ const Notch = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
+margin: 1rem 0;
 
   div{
     background-color: #35356b;
@@ -87,7 +88,7 @@ const Gaming = styled.div`
   background-color: #35356b;
   border-top-left-radius: 1.4rem;
   border-top-right-radius: 1.4rem;
-  margin: 1rem 0 ;
+  margin: 1rem .5rem ;
   padding: 0 0 1rem 0;
 `; 
 
@@ -97,6 +98,7 @@ const Slidercontainer = styled.div`
  margin: 1rem 1rem 0 0;
 
 `;
+
 const Text = styled.div`
  display: flex;
  flex-direction: column;

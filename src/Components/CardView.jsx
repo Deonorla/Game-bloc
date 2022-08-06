@@ -115,12 +115,17 @@ const Heading = styled.div`
 
  h4{
     color: #df78e3;
-   
+    @media (max-width: 400px){
+     font-size: 13px;
+    }
  }
 
  span{
     color: #6365bf;
     margin-left: .8rem;
+    @media (max-width: 400px){
+     font-size: 13px;
+    }
  }
 `;
 
@@ -207,6 +212,9 @@ const Interactions = styled.div`
   align-items: center;
   margin-top: 8px;
   width: 100%; 
+  @media (max-width: 500px){
+     justify-content: center;
+    }
 `;
 
 const Trend = styled.p`

@@ -1,22 +1,18 @@
 import styled from "styled-components";
 import {AiOutlineEye} from "react-icons/ai";
-import vid from "../Features/Videos/god.mp4";
-import vid1 from "../Features/Videos/kombat.mp4";
-import vid2 from "../Features/Videos/gotham.mp4";
-import vid3 from "../Features/Videos/creed.mp4";
-import u1 from "../assets/u7.png";
-
+import Activeapi from "../Features/Activeapi";
 const Activestream = ( ) =>{
     return(
         <Container>
-               
-                <Wrap>
-
+             {   Activeapi.map((data,id) => {
+                  return(
+                    <Wrap key={id}>
+        
                     <video autoPlay loop muted >
-                       <source src={vid} type="video/mp4" />
+                        <source src={data.link} type="video/mp4" />
                     </video>
                     <AvatarCon>
-                      <img src={u1} alt="img" />
+                      <img src={data.avatar} alt="img" />
                     <Seen>
                     <p>Live</p> 
                     </Seen>
@@ -41,100 +37,12 @@ const Activestream = ( ) =>{
                       </Buttons>
                     </Functions>
                 </Wrap>
-                <Wrap>
+                      
+                      )
 
-                    <video autoPlay loop muted >
-                       <source src={vid1} type="video/mp4" />
-                    </video>
-                    <AvatarCon>
-                      <img src={u1} alt="img" />
-                    <Seen>
-                    <p>Live</p> 
-                    </Seen>
-                    </AvatarCon>
-
-                    <Functions>
-                      <Buttons>
-                      <Eye/>
-                      <p> 10k</p> 
-                      </Buttons>
-                      <Buttons>
-                      <Eye/>
-                      <p> 10k</p> 
-                      </Buttons>
-                      <Buttons>
-                      <Eye/>
-                      <p> 10k</p> 
-                      </Buttons>
-                      <Buttons>
-                      <Eye/>
-                      <p> 10k</p> 
-                      </Buttons>
-                    </Functions>
-                </Wrap>
-                <Wrap>
-
-                    <video autoPlay loop muted >
-                       <source src={vid2} type="video/mp4" />
-                    </video>
-                    <AvatarCon>
-                      <img src={u1} alt="img" />
-                    <Seen>
-                    <p>Live</p> 
-                    </Seen>
-                    </AvatarCon>
-
-                    <Functions>
-                      <Buttons>
-                      <Eye/>
-                      <p> 10k</p> 
-                      </Buttons>
-                      <Buttons>
-                      <Eye/>
-                      <p> 10k</p> 
-                      </Buttons>
-                      <Buttons>
-                      <Eye/>
-                      <p> 10k</p> 
-                      </Buttons>
-                      <Buttons>
-                      <Eye/>
-                      <p> 10k</p> 
-                      </Buttons>
-                    </Functions>
-                </Wrap>
-                <Wrap>
-
-                    <video autoPlay loop muted >
-                       <source src={vid3} type="video/mp4" />
-                    </video>
-                    <AvatarCon>
-                      <img src={u1} alt="img" />
-                    <Seen>
-                    <p>Live</p> 
-                    </Seen>
-                    </AvatarCon>
-
-                    <Functions>
-                      <Buttons>
-                      <Eye/>
-                      <p> 10k</p> 
-                      </Buttons>
-                      <Buttons>
-                      <Eye/>
-                      <p> 10k</p> 
-                      </Buttons>
-                      <Buttons>
-                      <Eye/>
-                      <p> 10k</p> 
-                      </Buttons>
-                      <Buttons>
-                      <Eye/>
-                      <p> 10k</p> 
-                      </Buttons>
-                    </Functions>
-                </Wrap>
-
+                    })
+              
+}
         </Container>
     )
 }

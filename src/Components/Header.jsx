@@ -236,9 +236,12 @@ color: #6365bf;
 
 const Hamenu = styled( HiOutlineMenuAlt2)`
 color:#6365bf;
-margin-left: 1rem;
+margin-left: 1.5rem;
 font-size: 26px;
  cursor: pointer;
+ @media (max-width: 400px){
+  font-size: 18px;
+ }
  @media (min-width: 686px){
   display: none;
  }
@@ -407,6 +410,10 @@ const LogoContainer = styled.div`
 const Img = styled.div`
  img{
   margin: 0 16px 8px 0;
+  @media (max-width: 400px){
+    width: 80px;
+    height: 40px;
+    }
  }
 `;
 
