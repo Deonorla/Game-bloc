@@ -1,11 +1,15 @@
 
 import styled from "styled-components";
 import {motion} from "framer-motion"
+import {AiOutlineEye} from "react-icons/ai"
 import Hubdata from "../Features/Hubdata";
 import Activestream from "./Activestream";
-import {AiOutlineEye} from "react-icons/ai"
+import Matchmaking from "./Matchmaking";
+
 
 const Hub =()=>{
+
+
 
     return(
         <Hubcontainer>
@@ -55,6 +59,7 @@ const Hub =()=>{
 
                     <Activestream/>
                 </Stream>
+                <Matchmaking />
              </Gaming>
            
        </Hubcontainer>
