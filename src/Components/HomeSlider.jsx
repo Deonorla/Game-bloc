@@ -126,7 +126,7 @@ const Title = styled.h1`
 
 
  @media (min-width: 768px ){
-   max-height: 250px;
+   max-height: 220px;
    width: 100%;
 
 
@@ -241,26 +241,20 @@ const Background = styled.div`
   position: relative;
   z-index: -1; 
   border-radius: 15px;
-  // transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-  // box-shadow: rgb(0 0 0 / 69%) 0px 26px 36px -10px,
-  // rgb(0 0 0 / 73%) 0px 16px 10px -10px;
-  
- 
-  
- 
+
 `;
 
 const ImgSlide = styled(motion.div)`
   
   img{
     width: 100%;
-    max-height: 250px;
+    max-height: 200px;
     transition: opacity 500ms ease-in-out 0s;
     border-radius: 20px;
     opacity: 0.6;
     
     @media  (max-width: 376px){
-     height: 150px;
+     height: 100px;
 
     }
      @media (max-width: 768px){
@@ -283,7 +277,7 @@ const Wrap = styled.div`
   margin: 0 0 0 .5rem;
   display: flex;
   width: 100%;
-  max-height: 250px;
+  max-height: 220px;
   box-shadow: rgb(0 0 0 / 69%) 0px 26px 36px -10px,
   rgb(0 0 0 / 73%) 0px 16px 10px -10px;
   position: relative;

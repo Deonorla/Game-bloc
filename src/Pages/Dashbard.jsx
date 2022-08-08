@@ -316,7 +316,7 @@ const Enclosed = styled.div`
     }
     ::-webkit-scrollbar-thumb{
       background-color: #6365bf;
-      height: 10px;
+      min-height: 40px;
       border-radius: 9999px;
     }
 `;
