@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const GameCard = ({title, img, color}) =>{
+const GameCard = ({title, img, color, genre,rating}) =>{
     return(
         <Wrapper style={{backgroundImage:`linear-gradient(to bottom,
         ${color} 35%, #110f0f 83%)`, borderColor:`${color}`}} >
@@ -9,10 +9,10 @@ const GameCard = ({title, img, color}) =>{
              <Description>
                 <Title>
                     <Name>{title}</Name>
-                    <Rating>4.5</Rating>
+                    <Rating style={{borderColor:`${color}`}}>{rating}</Rating>
                 </Title>
                 <Info>
-                    Lorem ipsum dolor sit amet. 
+                    {genre} 
                 </Info>
              </Description>
         </Wrapper>
@@ -28,7 +28,7 @@ border-style: solid;
 
 const Img = styled.img`
   width: 100%;
-  height: 200px;
+  height: 150px;
 `;
 
 const Description = styled.div`
@@ -43,6 +43,7 @@ const Title = styled.div`
 `;
 
 const Name = styled.p`
+  height: 3rem;
   margin: 0;
   font-size: 18px;
   font-weight: 500;
@@ -55,11 +56,12 @@ const Rating = styled.p`
  margin-left: .3rem;
  padding: .4rem;
  border-radius: 9999px;
- border: 2px solid #df78e3;
+ border-style: solid;
+ border-width: 2.5px;
 `;
 
 const Info = styled.p`
- margin: 0;
+ margin: .5rem 0 0 0;
  color: #ffffff; 
 
 `;
