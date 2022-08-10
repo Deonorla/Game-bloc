@@ -9,8 +9,6 @@ import Matchmaking from "./Matchmaking";
 
 const Hub =()=>{
 
-
-
     return(
         <Hubcontainer>
              <Notch>

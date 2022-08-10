@@ -3,8 +3,7 @@ import Accordion from "./Accordion";
 import {BsPeople} from 'react-icons/bs';
 import {BiSearch} from 'react-icons/bi';
 import logo from '../assets/logo2.png';
-
-
+import PopularGame from "./PopularGame";
 const Matchmaking = () =>{
     
     return (
@@ -22,7 +21,7 @@ const Matchmaking = () =>{
            </Title>
 
          <Accordion />
-
+          <PopularGame />
         </Container>
     )
 }

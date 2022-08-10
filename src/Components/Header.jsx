@@ -277,6 +277,8 @@ const Menu = styled(motion.div)`
  height: 100vh;
  transition: 0.5 all ease;
  z-index: 1;
+ overflow: auto;
+ 
 
  ul{
   display: flex;

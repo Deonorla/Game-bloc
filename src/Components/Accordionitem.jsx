@@ -6,11 +6,9 @@ import u1 from "../assets/u2.png";
 import u2 from "../assets/u3.png";
 import u3 from "../assets/u4.png";
 
-
 const Accordionitem = ({img, title}) => {
     const [index, setIndex] = useState(false);
  
-     
     const handler = () =>{
         setIndex(!index);
         
@@ -53,20 +51,21 @@ const Accordionitem = ({img, title}) => {
 
 const Wrapper = styled.div`
 max-height: 1170px;
-
 `;
 
 const Header = styled.div`
   width: 100%;
+  border-radius: 8px;
   background-repeat: no-repeat;
   cursor: pointer;
-   transition: .6s;
-    transition-timing-function: ease-in-out ;
+  transition: .6s;
+  transition-timing-function: ease-in-out ;
  `;
 
 
   const Img = styled.div`
     position: relative;
+    border-radius: 8px;
     width: 100%;
     height: 200px;
     transition: .6s;
@@ -175,7 +174,7 @@ backdrop-filter: blur(5px);
 border-radius: 9999px;
 padding: .1rem .5rem;
 width: fit-content;
-
+margin-right: .5rem;
 
 
 p{

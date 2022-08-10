@@ -98,7 +98,7 @@ const Details = ()=>{
                   <Des>
                   <h2>{detail.title}</h2>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima accusamus, maiores distinctio sapiente harum quae velit, dignissimos voluptates a odit magnam eos totam consectetur veritatis rem esse minus ratione ducimus doloribus dolorum incidunt debitis impedit! Ipsum, perferendis. Sapiente nisi velit iusto commodi neque consequuntur voluptatum accusamus nobis. 
-                    </p>
+                  </p>
 
                  </Des>
 
@@ -108,6 +108,8 @@ const Details = ()=>{
 
                 </Half>
               </Center>
+
+              
 
          </Container>
 

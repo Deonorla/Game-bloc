@@ -122,7 +122,7 @@ const Title = styled.h1`
  rgb(0 0 0 / 73%) 0px 16px 10px -10px; 
  border-radius: 20px;
  max-height: 220px;
- width: 100%;
+ width: 97%;
 
 
  @media (min-width: 768px ){
@@ -133,7 +133,7 @@ const Title = styled.h1`
  }
 
  @media (min-width: 1000px) {
-   width: 60%;
+   width: 70%;
  }
 
  .slick-slider img{
@@ -248,7 +248,7 @@ const ImgSlide = styled(motion.div)`
   
   img{
     width: 100%;
-    max-height: 200px;
+    max-height: 220px;
     transition: opacity 500ms ease-in-out 0s;
     border-radius: 20px;
     opacity: 0.6;

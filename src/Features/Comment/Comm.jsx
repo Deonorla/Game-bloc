@@ -62,6 +62,7 @@ const CommentContainer = styled.div`
    width: 25rem;
 `;
 
+
 const User = styled.div`
    display: flex;
    flex-direction: row;

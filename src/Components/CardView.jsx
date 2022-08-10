@@ -221,7 +221,7 @@ const Trend = styled.p`
    display: flex;
    align-items: center;
    justify-content: center;
-   background-color: #e23719;
+   background-color: #df78e3;
    border-radius: 9999px;
    padding: 3px 16px 5px 16px;
    color:#fff;
