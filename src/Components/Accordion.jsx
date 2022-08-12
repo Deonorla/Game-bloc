@@ -16,7 +16,8 @@ const Accordion = ({Images}) =>{
               }
           </Container>
        )
-        
+  
+       
 }
 
 const Container = styled.div`
