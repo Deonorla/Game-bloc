@@ -5,17 +5,19 @@ import Header from "../Components/Header";
 import HomeSlider from "../Components/HomeSlider";
 import SearchBox from "../Components/SearchBox";
 import Hub from "../Components/Hub";
-import { BiBell } from "react-icons/bi"
+import { BiBell } from "react-icons/bi";
 import {AiOutlineSetting} from "react-icons/ai"
 import { HiCollection } from "react-icons/hi";
 import { FaUserFriends } from "react-icons/fa";
 import { AiFillMessage} from "react-icons/ai";
 import { AiTwotoneStar} from "react-icons/ai";
-import user from "../assets/User 2.png";
+import user from "../assets/u.png";
 import virtual from "../assets/virtual.jpg";
 import Chat from "../Components/Chat";
 
 const Dashboard = () =>{
+
+  
     return(
       <Wrapper>
               <Header/>
@@ -81,10 +83,7 @@ const Dashboard = () =>{
                   <h4>Gift Box</h4>
                   <Messages/>
                 </div>
-                <div>
-                  <h4>Wachlist</h4>
-                  <Messages/>
-                </div>
+                
 
               </MenuBox>
                 </Enclosed>
@@ -307,18 +306,6 @@ const MenuBox = styled.div`
 const Enclosed = styled.div`
   height: 19rem;
   border-radius: 12px;
-  overflow-y: auto;
-
-    ::-webkit-scrollbar{
-      width: 5px;
-      height: 10px;
-
-    }
-    ::-webkit-scrollbar-thumb{
-      background-color: #6365bf;
-      min-height: 40px;
-      border-radius: 9999px;
-    }
 `;
 
 const Library = styled(HiCollection)`

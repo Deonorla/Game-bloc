@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import {AiOutlineEye} from "react-icons/ai";
+import {AiOutlineSound} from "react-icons/ai";
+import {MdBattery80} from "react-icons/md";
+import {BsMicMute} from "react-icons/bs";
 import Activeapi from "../Features/Activeapi";
 const Activestream = ( ) =>{
     return(
@@ -24,16 +27,16 @@ const Activestream = ( ) =>{
                       <p> 10k</p> 
                       </Buttons>
                       <Buttons>
-                      <Eye/>
-                      <p> 10k</p> 
+                      <Sound/>
+                      <p> 85</p> 
                       </Buttons>
                       <Buttons>
-                      <Eye/>
-                      <p> 10k</p> 
+                      <Battery/>
+                      <p> 70</p> 
                       </Buttons>
                       <Buttons>
-                      <Eye/>
-                      <p> 10k</p> 
+                      <Mic/>
+                      <p> off</p> 
                       </Buttons>
                     </Functions>
                 </Wrap>
@@ -115,20 +118,21 @@ p{
 
 `;
 const Functions = styled.div`
-position: absolute;
-top: 0;
-right: 0;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-align-items: center;
-background: rgba(255, 255, 255, 0.34);
-box-shadow: 0 4px 30px rgba(0,0,0,0.1);
-backdrop-filter: blur(5px);
-border-radius: 9999px;
-padding: .3rem .1rem;
-width: fit-content;
-margin: 1rem .3rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.34);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 9999px;
+  padding: .3rem .1rem;
+  width: fit-content;
+  margin: 1rem .3rem;
+  transition: .2s;
 
 `;
 
@@ -150,8 +154,17 @@ const Eye = styled(AiOutlineEye)`
  color: #fff;
  font-size: 14px;
 `;
-// const Container = styled.div``;
-// const Container = styled.div``;
-// const Container = styled.div``;
+const Sound = styled(AiOutlineSound)`
+ color: #fff;
+ font-size: 14px;
+`;
+const Battery = styled(MdBattery80)`
+ color: #fff;
+ font-size: 14px;
+`;
+const Mic = styled(BsMicMute)`
+ color: #fff;
+ font-size: 14px;
+`;
 
 export default Activestream;

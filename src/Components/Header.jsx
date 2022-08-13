@@ -404,16 +404,18 @@ const LogoContainer = styled.div`
  flex-direction: row;
  align-items: center;
  justify-content: space-between;
- padding: 0 .5rem;
+ padding: .2rem .5rem;
  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
- 
+ @media (max-width: 375px){
+  padding:.1rem .5rem  ;
+ }
 `;
 
 const Img = styled.div`
  img{
   margin: 0 16px 8px 0;
   @media (max-width: 400px){
-    width: 80px;
+    width: 90px;
     height: 40px;
     }
  }
