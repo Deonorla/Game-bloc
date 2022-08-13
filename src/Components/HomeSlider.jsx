@@ -101,7 +101,7 @@
 const Title = styled.h1`
    color: #df78e3;
    @media (max-width: 400px){
-     font-size: 13px;
+     font-size: 1rem;
     }
    @media (min-width: 1000px){
     font-size: 1.7rem;
@@ -124,6 +124,11 @@ const Title = styled.h1`
  max-height: 220px;
  width: 97%;
 
+
+ @media (max-width: 376px ){
+   max-height: 170px;
+   
+ }
 
  @media (min-width: 768px ){
    max-height: 220px;
@@ -164,13 +169,25 @@ const Details = styled.div`
   h3{
    margin: 0;
    color: #FFFFFF;
-   font-size: 25px;
+   font-size: 1.5rem;
    max-width: 250px;
+
+   @media (max-width: 376px ){
+   font-size: 1.2rem;
+   
+ }
+
   }
   p{
     margin-top: 10px;
     color: #FFFFFF;
     max-width: 300px;
+
+    @media (max-width: 376px ){
+   font-size: .8rem;
+   
+ }
+
   }
 
 `;
@@ -205,6 +222,12 @@ const ButtonContainer = styled.div`
       font-size: 20px;
       margin: 0 10px 0 6px;
       color: #FFFFFF;
+
+      
+   @media (max-width: 376px ){
+   font-size: 1rem;
+   
+ }
    }
  }
 `;
@@ -254,7 +277,7 @@ const ImgSlide = styled(motion.div)`
     opacity: 0.6;
     
     @media  (max-width: 376px){
-     height: 100px;
+     max-height: 170px;
 
     }
      @media (max-width: 768px){

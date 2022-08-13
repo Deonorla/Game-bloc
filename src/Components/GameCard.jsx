@@ -29,6 +29,10 @@ border-style: solid;
 const Img = styled.img`
   width: 100%;
   height: 150px;
+  &:hover{
+    transform: scale(1.08);
+    cursor: pointer;
+  }
 `;
 
 const Description = styled.div`
@@ -44,10 +48,18 @@ const Title = styled.div`
 
 const Name = styled.p`
   height: 3rem;
+  max-height: 5rem;
   margin: 0;
   font-size: 18px;
   font-weight: 500;
   color: white;
+
+  @media (max-width: 367px){
+    font-size: 11px;
+  }
+  @media (max-width: 500px){
+    font-size: 15px;
+  }
 `;
 
 const Rating = styled.p`
@@ -61,9 +73,9 @@ const Rating = styled.p`
 `;
 
 const Info = styled.p`
- margin: .5rem 0 0 0;
+ margin: 1.5rem 0 0 0;
  color: #ffffff; 
-
+ 
 `;
 
 

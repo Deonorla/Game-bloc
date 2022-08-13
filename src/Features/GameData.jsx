@@ -27,7 +27,7 @@ const GameData = [
     {
         id: 4,  
         img:'https://images2.alphacoders.com/889/thumbbig-889323.webp',
-        title:'Tom Clancy: Rainbow seige',
+        title:'Tom Clancy: seige',
         genre: 'Action, Shooting',
         color: '#2d505e',
         rating:'4.6',

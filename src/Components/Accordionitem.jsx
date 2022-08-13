@@ -77,6 +77,9 @@ font-weight: 700;
 font-size: large;
 color: white;
 margin: 1rem;
+@media (max-width: 500px){
+  font-size: 16px;
+}
 `;
 
 const Title1 = styled.p`

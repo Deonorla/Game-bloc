@@ -3,7 +3,7 @@ const Imagedata = [
     {   
         id: 1,
         img:'https://images.alphacoders.com/119/thumbbig-1192299.webp',
-        title:'Call of Duty Vanguard',
+        title:'Call of Duty V',
     },
     {    
         id: 2,
