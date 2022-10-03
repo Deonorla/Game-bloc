@@ -21,7 +21,7 @@ import { RiSendPlaneFill } from "react-icons/ri";
                 </Title>
 
             <Chatheader>
-                <Avatar>
+                {/* <Avatar>
                    <Image> <img src={u1} alt=""/> </Image>
                    <Image> <img src={u2} alt=""/> </Image>
                    <Image> <img src={u3} alt=""/> </Image>
@@ -29,7 +29,7 @@ import { RiSendPlaneFill } from "react-icons/ri";
                    <Image> <img src={u5} alt=""/> </Image>
                    <Image> <img src={u6} alt=""/> </Image>
                    <Image> <img src={u7} alt=""/> </Image>
-                </Avatar>
+                </Avatar> */}
 
 
                 <Features>
@@ -102,7 +102,6 @@ import { RiSendPlaneFill } from "react-icons/ri";
 
 
  const Container = styled.div`
-  
     padding: .5rem;
 
     `;

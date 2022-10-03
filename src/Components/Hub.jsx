@@ -53,7 +53,7 @@ const Hub =()=>{
                 </Slidercontainer>
 
                 <Stream>
-                    <Active><h3>Active Streams</h3> <p>Live</p></Active>
+                    <Active><h3>Active Streams [Comming Soon..]</h3> <p>Live</p></Active>
 
                     <Activestream/>
                 </Stream>
@@ -68,7 +68,7 @@ const Hubcontainer =styled.div`
 
    @media (min-width: 1000px){
     margin-left: 7px;
-    margin-right: 17rem;
+    // margin-right: 17rem;
    }
 `;
 

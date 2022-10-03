@@ -104,7 +104,8 @@ const Title = styled.h1`
      font-size: 1rem;
     }
    @media (min-width: 1000px){
-    font-size: 1.7rem;
+    font-size: 2rem;
+    margin-left: .5rem;
    }
    @media (min-width: 600px){
     font-size: 1.3rem;
@@ -122,7 +123,7 @@ const Title = styled.h1`
  rgb(0 0 0 / 73%) 0px 16px 10px -10px; 
  border-radius: 20px;
  max-height: 220px;
- width: 97%;
+ width: 90%;
 
 
  @media (max-width: 376px ){
@@ -138,7 +139,7 @@ const Title = styled.h1`
  }
 
  @media (min-width: 1000px) {
-   width: 70%;
+   width: 30rem;
  }
 
  .slick-slider img{
@@ -255,7 +256,7 @@ margin: 4rem 1rem 1rem 2rem;
 
 }
 @media (min-width: 1000px){
-  margin: 4.5rem 18rem 2rem 0;
+  margin: 4.5rem 0rem 2rem 0;
 
 }
 `;
@@ -299,7 +300,7 @@ const Wrap = styled.div`
 @media (min-width: 1000px){
   margin: 0 0 0 .5rem;
   display: flex;
-  width: 100%;
+  width: 35%;
   max-height: 220px;
   box-shadow: rgb(0 0 0 / 69%) 0px 26px 36px -10px,
   rgb(0 0 0 / 73%) 0px 16px 10px -10px;

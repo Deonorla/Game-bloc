@@ -167,7 +167,7 @@ const SearchContainer = styled.div`
 
   @media (min-width: 1000px){
     margin-left: 10px;
-    margin-right: 18rem;
+    // margin-right: 18rem;
   }
     
 `;

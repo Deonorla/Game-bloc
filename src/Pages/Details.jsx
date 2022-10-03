@@ -270,7 +270,8 @@ const Container = styled.div`
   display: none;
 @media (min-width: 1000px){
   display: flex;
-
+  justify-content: center;
+  margin: 0 7rem;
 }
 `;
 

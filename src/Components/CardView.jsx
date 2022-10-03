@@ -28,8 +28,8 @@ const CardView = () =>{
         <CardContainer>
              <Heading>
                
-                  <h4> All News </h4> 
-                  <span>(73 new posts)</span>
+                  <h4> Tournaments </h4> 
+                  <span>(73 new Tornaments)</span>
              </Heading>
 
             
@@ -103,7 +103,7 @@ const CardContainer = styled.div`
 
    @media (min-width: 1000px){
     margin-left: 7px;
-    margin-right: 17rem;
+   //  margin-right: 17rem;
    }
 `;
 

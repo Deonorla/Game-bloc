@@ -1,7 +1,6 @@
 import { motion } from "framer-motion"
 import styled from "styled-components"
 import CardView from "../Components/CardView";
-import Header from "../Components/Header";
 import HomeSlider from "../Components/HomeSlider";
 import SearchBox from "../Components/SearchBox";
 import Hub from "../Components/Hub";
@@ -20,7 +19,7 @@ const Dashboard = () =>{
   
     return(
       <Wrapper>
-              <Header/>
+              
          <Nav>
 
          <AvatarContainer   >
@@ -29,21 +28,15 @@ const Dashboard = () =>{
                           <ColorContainer  >
 
                           <Red  >
-                            <Bell  />
+            
                             <img src={user} alt="avatar" />
-                             <Settings/>
+                             
                           </Red>
                           <Yellow  >
                             <h4>Netheream Lord</h4>
-                            <p>User Id: 23456</p>
                           </Yellow>
 
                           <Green  >
-                            <div>
-                              <h4>Post</h4>
-                              <p>4K</p>
-                            </div>
-                            
                             
                             <div>
                               <h4>Subscribers</h4>
@@ -60,27 +53,23 @@ const Dashboard = () =>{
                   
               <MenuBox> 
                 <div>
-                  <h4>Messages</h4>
+                  <h4>Home</h4>
                   <Messages/>
                 </div>
                 <div>
-                  <h4>Library</h4>
+                  <h4>Tournaments</h4>
                   <Library/>
                 </div>
                 <div>
-                  <h4>Favourite</h4>
+                  <h4>Friends</h4>
                   <Favourite/>
                 </div>
                 <div>
-                  <h4>Friends</h4>
+                  <h4> Games</h4>
                   <Friends/>
                 </div>
                 <div>
                   <h4>Tornaments</h4>
-                  <Messages/>
-                </div>
-                <div>
-                  <h4>Gift Box</h4>
                   <Messages/>
                 </div>
                 
@@ -90,45 +79,37 @@ const Dashboard = () =>{
 
          </Nav>
 
-          <Container>
+          {/* <Container>
      
            <HomeSlider/>
            <SearchBox/>
            <CardView/>
            <Hub/>
 
-          </Container>
+          </Container> */}
 
-
+{/* 
          <Chathome>
           <Chat/>
-         </Chathome>
+         </Chathome> */}
 
         </Wrapper>
     )
 }
 
 const Wrapper = styled.div`
-
+  
 `;
 
-const Chathome = styled.div`
-display: none;
-@media (min-width: 1000px){
-  display: block;
-  position: fixed;
-  right: 0;
-  top: 2.5rem;
- overflow: auto;
-}
-`;
 
 const Nav = styled.div`
  display: none;
 @media (min-width: 686px){
-  position: fixed; 
+  position: sticky; 
+  position: -webkit-sticky;
+  
   display: flex;
-  height: 100%;
+  height: 100vh;
   flex-direction: column;
   top: 3.5rem;
   margin-left: 1rem;
@@ -154,6 +135,7 @@ display: none;
   background: #35356b;
   border-radius: 12px;
   position: relative;
+  width: 10rem;
 
   
   img{
@@ -243,10 +225,10 @@ const Yellow = styled(motion.div)`
 `;
 
 const Green = styled(motion.div)`
- display: grid;
- grid-template-columns: repeat(2, 1fr);
- gap: .4rem;
-padding-right: .5rem;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
  div{
    display: flex;
    flex-direction: column;
@@ -279,7 +261,7 @@ const MenuBox = styled.div`
     background: #35356b;
     padding: .7rem 1.2rem;
     border-radius: 12px;
-   
+    width: ;
     div{
      display: flex;
      flex-direction: row;
@@ -305,6 +287,7 @@ const MenuBox = styled.div`
 
 const Enclosed = styled.div`
   height: 19rem;
+  width: 12rem;
   border-radius: 12px;
 `;
 
