@@ -16,10 +16,8 @@ import Chat from "../Components/Chat";
 
 const Dashboard = () =>{
 
-  
     return(
       <Wrapper>
-              
          <Nav>
 
          <AvatarContainer   >
